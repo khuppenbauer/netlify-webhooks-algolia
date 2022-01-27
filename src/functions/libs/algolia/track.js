@@ -84,7 +84,7 @@ module.exports = async (id) => {
   const collectionLvl0 = [];
   const collectionLvl1 = [];
   const collectionLvl2 = [];
-  if (collection.length > 0) {
+  if (collection && collection.length > 0) {
     collection.forEach((collectionItem) => {
       const { name, collectionType, subCollection } = collectionItem;
       collectionLvl0.push(collectionType.name);
