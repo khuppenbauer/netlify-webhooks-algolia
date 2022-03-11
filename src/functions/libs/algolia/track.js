@@ -12,6 +12,8 @@ module.exports = async (id) => {
   const record = await Track.findById(id);
   const {
     name,
+    title,
+    slug,
     date,
     distance,
     totalElevationGain,
@@ -42,6 +44,8 @@ module.exports = async (id) => {
   const object = {
     objectID: id,
     name,
+    title,
+    slug,
     date: new Date(date).getTime() / 1000,
     distance,
     totalElevationGain,
