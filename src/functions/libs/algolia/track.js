@@ -35,6 +35,7 @@ module.exports = async (id) => {
     difficulty,
     fitness,
     experience,
+    private: privateTrack,
   } = record;
   const { geometry } = geoJson.features[0];
   const { coordinates, type: geoJsonType } = geometry;
@@ -66,6 +67,7 @@ module.exports = async (id) => {
     difficulty,
     fitness,
     experience,
+    private: privateTrack,
   };
   let hierarchicalCategories = {};
   if (startCity && startState && startCountry && endCity && endCountry && endState) {
