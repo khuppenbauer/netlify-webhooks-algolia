@@ -92,13 +92,13 @@ module.exports = async (id) => {
   const collectionLvl2 = [];
   if (collection && collection.length > 0) {
     collection.forEach((collectionItem) => {
-      const { name, collectionType, subCollection } = collectionItem;
-      collectionLvl0.push(collectionType.name);
-      collectionLvl1.push(`${collectionType.name} > ${name}`);
-      collectionLvl2.push(`${collectionType.name} > ${name}`);
+      const { name, collectionTypes, subCollection } = collectionItem;
+      collectionLvl0.push(collectionTypes.name);
+      collectionLvl1.push(`${collectionTypes.name} > ${name}`);
+      collectionLvl2.push(`${collectionTypes.name} > ${name}`);
       if (subCollection.length > 0) {
         subCollection.forEach((subcollectionItem) => {
-          const { name: subCollectionName, collectionType: subCollectionType } = subcollectionItem;
+          const { name: subCollectionName, collectionTypes: subCollectionType } = subcollectionItem;
             collectionLvl0.push(subCollectionType.name);
             collectionLvl1.push(`${subCollectionType.name} > ${subCollectionName}`);
             collectionLvl2.push(`${subCollectionType.name} > ${subCollectionName} > ${name}`);
