@@ -31,7 +31,7 @@ module.exports = async (id) => {
   }
   const client = algoliasearch(applicationID, adminAPIKey);
   const index = client.initIndex(indexName);
-  const object = {
+  let object = {
     objectID: id,
     name,
     type,
@@ -43,6 +43,12 @@ module.exports = async (id) => {
     meta,
     _geoloc: geoLoc,
   };
+  if (geoJsonType === 'Point') {
+    object = {
+      ...object,
+      geometry,
+    };
+  }
 
   await index
     .setSettings({
