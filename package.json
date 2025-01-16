@@ -14,7 +14,7 @@
     "axios": "^1.6.0",
     "browserslist": "^4.16.5",
     "dotenv": "^8.2.0",
-    "mongoose": "^5.13.20",
+    "mongoose": "^8.9.5",
     "netlify-lambda": "^2.0.1"
   },
   "devDependencies": {
